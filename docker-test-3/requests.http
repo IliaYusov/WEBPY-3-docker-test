@@ -1,0 +1,54 @@
+@email = som@mail.ru
+@password = secretpasswordsam123
+
+###
+
+# получение пользователя
+GET http://127.0.0.1:1337/users/1
+Content-Type: application/json
+
+###
+
+# получение объявления
+GET http://127.0.0.1:1337/adverts/2
+Content-Type: application/json
+
+###
+
+# получение статики
+GET http://localhost:1337/static/hello.txt
+Content-Type: text/plain
+
+###
+
+# создание пользователя
+POST http://127.0.0.1:1337/users/
+Content-Type: application/json
+
+{
+  "username": "Som",
+  "email": "som@mail.ru",
+  "password": "secretpasswordsam123"
+}
+
+###
+
+# создание объявления
+POST http://127.0.0.1:1337/adverts/
+Content-Type: application/json
+Authorization: Basic {{email}} {{password}}
+
+{
+  "title": "new title 34",
+  "text": "lorem ipsum",
+  "user_id": 6
+}
+
+###
+
+# удаление заказа
+DELETE http://127.0.0.1:1337/adverts/1
+Content-Type: application/json
+Authorization: Basic {{email}} {{password}}
+
+###
